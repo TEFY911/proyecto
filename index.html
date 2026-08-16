@@ -1,13 +1,75 @@
 <!doctype html>
 <html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Piedra, Papel o Tijera</title>
-  <link rel="stylesheet" href="style.css" />
-  <script type="module" src="app.js" defer></script>
-</head>
-<body>
-  <div id="root"></div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Juego de Piedra, Papel o Tijera con una interfaz moderna y fácil de usar."
+    />
+    <title>Piedra, Papel o Tijera</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="game-panel" aria-label="Juego Piedra, Papel o Tijera">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Mini juego</p>
+            <h1>Piedra, Papel o Tijera</h1>
+          </div>
+          <span class="badge">Mejor de 5</span>
+        </header>
+
+        <div class="scoreboard" aria-live="polite">
+          <div class="score-box player-box">
+            <span class="label">Tú</span>
+            <strong id="player-score">0</strong>
+          </div>
+          <div class="score-box draw-box">
+            <span class="label">Empates</span>
+            <strong id="draw-score">0</strong>
+          </div>
+          <div class="score-box cpu-box">
+            <span class="label">CPU</span>
+            <strong id="cpu-score">0</strong>
+          </div>
+        </div>
+
+        <div class="arena" aria-live="polite">
+          <div class="choice-panel">
+            <span class="choice-title">Tú</span>
+            <div id="player-choice" class="choice-display">?</div>
+          </div>
+
+          <div class="versus">VS</div>
+
+          <div class="choice-panel">
+            <span class="choice-title">CPU</span>
+            <div id="cpu-choice" class="choice-display">?</div>
+          </div>
+        </div>
+
+        <div id="status" class="status" data-tone="neutral">Elige tu movimiento</div>
+
+        <div class="choices" aria-label="Opciones del juego">
+          <button class="choice-btn" data-choice="rock" aria-label="Elegir piedra">
+            <span class="emoji">✊</span>
+            <span>Piedra</span>
+          </button>
+          <button class="choice-btn" data-choice="paper" aria-label="Elegir papel">
+            <span class="emoji">✋</span>
+            <span>Papel</span>
+          </button>
+          <button class="choice-btn" data-choice="scissors" aria-label="Elegir tijera">
+            <span class="emoji">✌️</span>
+            <span>Tijera</span>
+          </button>
+        </div>
+
+        <button id="reset-btn" class="reset-btn" type="button">Reiniciar</button>
+      </section>
+    </main>
+  </body>
 </html>
